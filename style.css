@@ -1,0 +1,180 @@
+/* === Global Style === */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    margin: 0;
+    color: #333;
+}
+
+/* === Header === */
+header {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* === Navigation Bar === */
+nav {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffe082;
+}
+
+/* === Container Layout === */
+.container {
+    display: flex;
+    margin: 30px auto;
+    max-width: 1200px;
+    gap: 25px;
+}
+
+/* === Sidebar === */
+.sidebar {
+    width: 25%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+}
+
+.sidebar h2 {
+    border-bottom: 2px solid #ffd200;
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #ffd200;
+}
+
+/* === Main Content === */
+.main-content {
+    flex: 1;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    color: #fff;
+}
+
+/* === Form === */
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+}
+
+/* === Button Style === */
+.form-input button {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 25px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 15px rgba(247, 151, 30, 0.5);
+}
+
+.form-input button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(247, 151, 30, 0.7);
+}
+
+/* Tombol Reset */
+button.reset {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* === Table === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: rgba(255, 210, 0, 0.8);
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background: rgba(255,255,255,0.1);
+}
+
+/* === Summary === */
+.summary {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+}
+
+/* === Footer === */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0,0,0,0.2);
+    color: white;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
