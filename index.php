@@ -1,37 +1,8 @@
-<?php
-// Mulai session untuk menyimpan data sementara
-session_start();
-
-if (!isset($_SESSION['catatan'])) {
-    $_SESSION['catatan'] = [];
-}
-
-// Menambahkan data baru
-if (isset($_POST['tambah'])) {
-    $tanggal = $_POST['tanggal'];
-    $keterangan = $_POST['keterangan'];
-    $kategori = $_POST['kategori'];
-    $jumlah = $_POST['jumlah'];
-
-    $_SESSION['catatan'][] = [
-        'tanggal' => $tanggal,
-        'keterangan' => $keterangan,
-        'kategori' => $kategori,
-        'jumlah' => $jumlah
-    ];
-}
-    
-// Reset data
-if (isset($_POST['reset'])) {
-    $_SESSION['catatan'] = [];
-}
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikasi Pencatatan Keuangan Pribadi</title>
+    <title>Beranda - Aplikasi Keuangan Pribadi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,74 +13,40 @@ if (isset($_POST['reset'])) {
 
 <nav>
     <ul>
-        <li><a href="#">Beranda</a></li>||
-        <li><a href="#">Catatan</a></li>||
-        <li><a href="#">Laporan</a></li>||
+        <li><a href="index.php">Beranda</a></li>
+        <li><a href="catatan.php">Catatan</a></li>
+        <li><a href="#">Laporan</a></li>
     </ul>
 </nav>
 
+<main>
+    <h2>Selamat Datang!</h2>
+    <p>Ini adalah halaman beranda aplikasi keuangan pribadi Anda.  
+       Gunakan menu <strong>Catatan</strong> di atas untuk menambah atau melihat data keuangan Anda.</p>
 
-
-    <main class="main-content">
-        <h2>Tambah Catatan Keuangan</h2>
-        <form method="POST">
-            <div class="form-input">
-                <label>Tanggal:</label>
-                <input type="date" name="tanggal" required>
-
-                <label>Keterangan:</label>
-                <input type="text" name="keterangan" required>
-
-                <label>Kategori:</label>
-                <select name="kategori">
-                    <option>Pemasukan</option>
-                    <option>Pengeluaran</option>
-                </select>
-
-                <label>Jumlah (Rp):</label>
-                <input type="number" name="jumlah" required>
-
-                <button type="submit" name="tambah">💾 Simpan</button>
-                <button type="submit" name="reset" class="reset">🗑 Reset</button>
-            </div>
-        </form>
-
-        <h2>Riwayat Keuangan</h2>
-        <table>
-            <tr>
-                <th>Tanggal</th>
-                <th>Keterangan</th>
-                <th>Kategori</th>
-                <th>Jumlah (Rp)</th>
-            </tr>
-            <?php 
-            $total = 0;
-            foreach ($_SESSION['catatan'] as $item): 
-                if ($item['kategori'] == 'Pemasukan') {
-                    $total += $item['jumlah'];
-                } else {
-                    $total -= $item['jumlah'];
-                }
-            ?>
-            <tr>
-                <td><?= $item['tanggal'] ?></td>
-                <td><?= $item['keterangan'] ?></td>
-                <td><?= $item['kategori'] ?></td>
-                <td><?= number_format($item['jumlah'], 0, ',', '.') ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-
-        <div class="summary">
-            <h3>Total Saldo Saat Ini:</h3>
-            <p><strong>Rp <?= number_format($total, 0, ',', '.') ?></strong></p>
-        </div>
-    </main>
-</div>
+    <p><a href="catatan.php" class="button">➡️ Buka Halaman Catatan</a></p>
+</main>
 
 <footer>
-    <p>© <?= date("Y"); ?> Aplikasi Keuangan Pribadi | Dibuat dengan ❤️ oleh Kamu</p>
+    <div class="footer-container">
+        <p>💰 <strong>Aplikasi Keuangan Pribadi</strong></p>
+        <p>© <?= date("Y"); ?> Dibuat dengan ❤️ oleh <strong>Padli</strong></p>
+        <div class="social-links">
+    <a href="whatsapp.html" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp">
+    </a>
+    <a href="instagram.html" target="_blank">
+         <img src="https://cdn-icons-png.flaticon.com/512/3670/3670125.png" alt="Instagram">
+    </a>
+    <a href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    </div>
+
+    </div>
 </footer>
+
+
 
 </body>
 </html>
